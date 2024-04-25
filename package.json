@@ -3,7 +3,7 @@
     "registry": "https://npm.pkg.github.com/@sfiller23"
   },
   "name": "@sfiller23/sf-component-library",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "type": "module",
   "main": "dist/index.cjs.js",
