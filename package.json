@@ -1,9 +1,6 @@
 {
-  "publishConfig": {
-    "@sfiller23:registry": "https://npm.pkg.github.com"
-  },
   "name": "@sfiller23/sf-component-library",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "description": "",
   "type": "module",
   "main": "dist/index.cjs.js",
