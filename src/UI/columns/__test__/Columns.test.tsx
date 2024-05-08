@@ -5,8 +5,8 @@ import Columns from "../Columns";
 
 describe("Columns component", () => {
   it("Columns should render correctly", () => {
-    render(<Columns />);
-    const columns = screen.getByRole("columns");
+    render(<Columns data-testid="columns" />);
+    const columns = screen.getByTestId("columns");
     expect(columns).toBeInTheDocument();
   });
 });
