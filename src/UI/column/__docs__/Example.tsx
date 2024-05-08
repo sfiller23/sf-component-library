@@ -3,8 +3,8 @@ import Column from "../Column";
 
 const Example: FC<{ $span: number }> = ({ $span = 2 }) => {
   return (
-    <Column $span={$span}>
-      <div data-testid="column" />
+    <Column data-testid="column" $span={$span}>
+      <div />
     </Column>
   );
 };

@@ -11,6 +11,6 @@ type Story = StoryObj<typeof Example>;
 
 export const Primary: Story = {
   args: {
-    $span = 2,
+    $span: 2,
   },
 };
