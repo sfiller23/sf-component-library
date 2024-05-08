@@ -5,8 +5,8 @@ import Grid from "../Grid";
 
 describe("Grid component", () => {
   it("Grid should render correctly", () => {
-    render(<Grid minItemWidth={"100px"} />);
-    const grid = screen.getByRole("grid");
+    render(<Grid data-testid="grid" minItemWidth="100px" />);
+    const grid = screen.getByTestId("grid");
     expect(grid).toBeInTheDocument();
   });
 });

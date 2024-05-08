@@ -5,8 +5,8 @@ import Vcentered from "../Vcentered";
 
 describe("Vcentered component", () => {
   it("Vcentered should render correctly", () => {
-    render(<Vcentered />);
-    const vcentered = screen.getByRole("vcentered");
+    render(<Vcentered data-testid="vcentered" />);
+    const vcentered = screen.getByTestId("vcentered");
     expect(vcentered).toBeInTheDocument();
   });
 });

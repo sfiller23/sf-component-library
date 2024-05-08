@@ -5,8 +5,8 @@ import Split from "../Split";
 
 describe("Split component", () => {
   it("Split should render correctly", () => {
-    render(<Split />);
-    const split = screen.getByRole("split");
+    render(<Split data-testid="split" />);
+    const split = screen.getByTestId("split");
     expect(split).toBeInTheDocument();
   });
 });

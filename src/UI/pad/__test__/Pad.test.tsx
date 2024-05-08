@@ -5,8 +5,8 @@ import Pad from "../Pad";
 
 describe("Pad component", () => {
   it("Pad should render correctly", () => {
-    render(<Pad padding={"l"} />);
-    const pad = screen.getByRole("pad");
+    render(<Pad data-testid="pad" padding={"l"} />);
+    const pad = screen.getByTestId("pad");
     expect(pad).toBeInTheDocument();
   });
 });

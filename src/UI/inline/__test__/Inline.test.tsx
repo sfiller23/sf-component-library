@@ -5,8 +5,8 @@ import Inline from "../Inline";
 
 describe("Inline component", () => {
   it("Inline should render correctly", () => {
-    render(<Inline justify="center" align="center" />);
-    const inline = screen.getByRole("inline");
+    render(<Inline data-testid="inline" justify="center" align="center" />);
+    const inline = screen.getByTestId("inline");
     expect(inline).toBeInTheDocument();
   });
 });

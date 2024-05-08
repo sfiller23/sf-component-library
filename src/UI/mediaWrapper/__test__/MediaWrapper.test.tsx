@@ -5,8 +5,8 @@ import MediaWrapper from "../MediaWrapper";
 
 describe("MediaWrapper component", () => {
   it("MediaWrapper should render correctly", () => {
-    render(<MediaWrapper />);
-    const mediaWrapper = screen.getByRole("mediaWrapper");
+    render(<MediaWrapper data-testid="mediaWrapper" />);
+    const mediaWrapper = screen.getByTestId("mediaWrapper");
     expect(mediaWrapper).toBeInTheDocument();
   });
 });
