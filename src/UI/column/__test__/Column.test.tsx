@@ -6,7 +6,7 @@ import Column from "../Column";
 describe("Column component", () => {
   it("Column should render correctly", () => {
     render(<Column $span={2} />);
-    const column = screen.getByTestId("column");
+    const column = screen.getByText("column");
     expect(column).toBeInTheDocument();
   });
 });
