@@ -1,30 +1,11 @@
 import React, { FC } from "react";
-import Button, { ButtonProps } from "../Button";
+import Column from "../Column";
 
-const Example: FC<ButtonProps> = ({
-  disabled = false,
-  onClick = () => {},
-  primary = true,
-  size = "small",
-  text = "Button",
-}) => {
+const Example: FC<{ $span: number }> = ({ $span = 2 }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100%",
-      }}
-    >
-      <Button
-        size={size}
-        text={text}
-        disabled={disabled}
-        onClick={onClick}
-        primary={primary}
-      />
-    </div>
+    <Column $span={$span}>
+      <div data-testid="column" />
+    </Column>
   );
 };
 
