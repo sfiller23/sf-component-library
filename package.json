@@ -1,5 +1,6 @@
 {
-  "version": "1.3.7",
+  "name": "@cman430/sf-component-library",
+  "version": "1.3.8",
   "description": "",
   "type": "module",
   "main": "dist/index.cjs.js",
