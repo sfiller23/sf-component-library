@@ -25,7 +25,6 @@ jobs:
       run: |
         node -e "let pkg=require('./package.json'); pkg.name='@cman430/'+pkg.name.split('/').pop(); require('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2));"
 
-      - name: Publish to npm
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+      run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
