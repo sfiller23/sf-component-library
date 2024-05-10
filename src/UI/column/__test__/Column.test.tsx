@@ -5,7 +5,7 @@ import Column from "../Column";
 
 describe("Column component", () => {
   it("Column should render correctly", () => {
-    render(<Column $span={2}>column</Column>);
+    render(<Column $span={1}>column</Column>);
     const column = screen.getByText("column");
     expect(column).toBeInTheDocument();
   });
