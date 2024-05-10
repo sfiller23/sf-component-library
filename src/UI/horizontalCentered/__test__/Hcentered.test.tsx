@@ -8,7 +8,7 @@ describe("Hcentered component", () => {
     render(
       <Hcentered
         data-testid="hcentered"
-        maxWidth={"100px"}
+        maxWidth={"105px"}
         centerText
         centerChildren={false}
       />,
