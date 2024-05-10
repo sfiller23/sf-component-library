@@ -4,3 +4,6 @@ dist
 #storybook build directory
 storybook-static
 *storybook.log
+
+# Ignore npm-publish.yml
+npm-publish.yml
