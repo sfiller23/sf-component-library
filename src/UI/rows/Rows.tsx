@@ -1,9 +1,14 @@
+import { PropsWithChildren } from "react";
 import { styled } from "styled-components";
-import { SpaceSchemaProps, spaceSchema } from "../../utils/theme";
+import { spaceSchema } from "../../utils/theme";
 
-const Rows = styled.div<SpaceSchemaProps>`
+interface RowsProps {
+  gutter?: keyof typeof spaceSchema;
+}
+
+const Rows = styled.div<PropsWithChildren<RowsProps>>`
   display: grid;
-  gap: ${(props) => spaceSchema[props.gutter] ?? spaceSchema.l};
+  gap: ${({ gutter = spaceSchema.l }) => spaceSchema[gutter]};
 `;
 
 export default Rows;
