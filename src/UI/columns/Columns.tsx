@@ -1,10 +1,15 @@
 import { styled } from "styled-components";
-import { SpaceSchemaProps, spaceSchema } from "../../utils/theme";
+import { spaceSchema } from "../../utils/theme";
 
-const Columns = styled.div<SpaceSchemaProps>`
+interface ColumnsProps {
+  columns: number;
+  gutter?: keyof typeof spaceSchema;
+}
+
+const Columns = styled.div<ColumnsProps>`
   --columns: ${({ columns = 1 }) => columns};
   display: grid;
-  gap: ${(props) => spaceSchema[props.gutter] ?? spaceSchema.l};
+  gap: ${({ gutter = spaceSchema.l }) => spaceSchema[gutter]};
   grid-template-columns: repeat(var(--columns), 1fr);
 `;
 
