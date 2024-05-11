@@ -1,1 +1,1 @@
-export { default as Inline } from "./Inline";
+export type { default as Inline, InlineProps } from "./Inline";

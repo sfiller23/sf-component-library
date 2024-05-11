@@ -10,7 +10,7 @@ interface justifyAlignMap {
   evenly: string;
 }
 
-interface InlineProps {
+export interface InlineProps {
   gutter?: keyof SpaceSchemaProps;
   justify: keyof justifyAlignMap;
   align: keyof justifyAlignMap;
