@@ -1,1 +1,1 @@
-export * from "../UI/column";
+export * from "./button";
