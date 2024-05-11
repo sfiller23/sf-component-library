@@ -5,8 +5,8 @@ import Typography from "../Typography";
 
 describe("Typography component", () => {
   it("Typography should render correctly", () => {
-    render(<Typography data-testid="typography">test</Typography>);
-    const typography = screen.getByTestId("typography");
+    render(<Typography data-testid="typography">typography</Typography>);
+    const typography = screen.getByText("typography");
     expect(typography).toBeInTheDocument();
   });
 });
