@@ -1,11 +1,11 @@
-import React from "react";
+import { PropsWithChildren } from "react";
 import { styled } from "styled-components";
 
 interface MediaWrapperProps {
   ratio?: [number, number];
 }
 
-const MediaWrapper: React.FC<MediaWrapperProps> = styled.div<MediaWrapperProps>`
+const MediaWrapper = styled.div<PropsWithChildren<MediaWrapperProps>>`
   --n: ${(props) => (props.ratio ? props.ratio[0] : 1)};
   --d: ${(props) => (props.ratio ? props.ratio[1] : 1)};
 
