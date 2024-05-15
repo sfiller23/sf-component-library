@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { spaceSchema } from "../../utils/theme";
+import { spaceSchema } from "../../themes/theme";
 
 interface PaddingProps {
   padding: keyof typeof spaceSchema | keyof (typeof spaceSchema)[];

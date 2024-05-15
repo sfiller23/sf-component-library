@@ -1,6 +1,6 @@
 import { Children, PropsWithChildren } from "react";
 import { styled } from "styled-components";
-import { spaceSchema } from "../../utils/theme";
+import { spaceSchema } from "../../themes/theme";
 
 interface ColumnsProps {
   gutter?: keyof typeof spaceSchema;

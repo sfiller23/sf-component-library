@@ -1,3 +1,8 @@
+interface ITheme {
+  spaceSchema: IKeyStringRem;
+  fractionsSchema: IKeyString;
+}
+
 export interface IKeyStringRem {
   [key: string]: `${number}rem`;
 }
@@ -24,4 +29,9 @@ export const fractionsSchema: IKeyString = {
   "3/4": "3fr 1fr",
   "auto-start": "auto 1fr",
   "auto-end": "1fr auto",
+};
+
+export const theme: ITheme = {
+  spaceSchema,
+  fractionsSchema,
 };

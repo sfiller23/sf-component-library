@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import { styled } from "styled-components";
-import { fractionsSchema, spaceSchema } from "../../utils/theme";
+import { fractionsSchema, spaceSchema } from "../../themes/theme";
 
 interface SplitProps {
   fraction?: keyof typeof fractionsSchema;
