@@ -17,8 +17,13 @@ const StyledTypography = styled.p<TypographyProps>`
 `;
 
 const Typography = (props: TypographyProps) => {
-  const { children, as = "p" } = props;
-  return <StyledTypography as={as}>{children}</StyledTypography>;
+  const { children, as = "p", color } = props;
+  console.log(color);
+  return (
+    <StyledTypography as={as} color={color}>
+      {children}
+    </StyledTypography>
+  );
 };
 
 export default Typography;
