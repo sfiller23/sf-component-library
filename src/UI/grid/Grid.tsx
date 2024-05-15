@@ -1,14 +1,14 @@
 import { styled } from "styled-components";
-import { SpaceSchemaProps, spaceSchema } from "../../utils/theme";
+import { spaceSchema } from "../../utils/theme";
 
 interface GridProps {
   minItemWidth: string;
-  gutter?: keyof SpaceSchemaProps;
+  gutter?: keyof typeof spaceSchema;
 }
 
 const Grid = styled.div<GridProps>`
   display: grid;
-  gap: ${({ gutter = spaceSchema.l }) => spaceSchema[gutter]};
+  gap: ${({ gutter = spaceSchema.xs }) => spaceSchema[gutter]};
 
   grid-template-columns: repeat(
     auto-fit,

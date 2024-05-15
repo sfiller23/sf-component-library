@@ -8,7 +8,7 @@ interface RowsProps {
 
 const Rows = styled.div<PropsWithChildren<RowsProps>>`
   display: grid;
-  gap: ${({ gutter = spaceSchema.l }) => spaceSchema[gutter]};
+  gap: ${({ gutter = spaceSchema.xs }) => spaceSchema[gutter]};
 `;
 
 export default Rows;

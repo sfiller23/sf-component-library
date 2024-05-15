@@ -1,15 +1,17 @@
+import { PropsWithChildren } from "react";
 import { styled } from "styled-components";
-import {
-  FractionSchemaProps,
-  fractionsSchema,
-  spaceSchema,
-} from "../../utils/theme";
+import { fractionsSchema, spaceSchema } from "../../utils/theme";
 
-const Split = styled.div<FractionSchemaProps>`
+interface SplitProps {
+  fraction?: keyof typeof fractionsSchema;
+  gutter?: keyof typeof spaceSchema;
+}
+
+const Split = styled.div<PropsWithChildren<SplitProps>>`
   display: grid;
-  gap: ${(props) => spaceSchema[props.gutter] ?? spaceSchema.l};
-  grid-template-columns: ${({ fraction }) =>
-    fractionsSchema[fraction] ?? fractionsSchema["1/2"]};
+  gap: ${({ gutter = spaceSchema.xs }) => spaceSchema[gutter]};
+  grid-template-columns: ${({ fraction = fractionsSchema["1/2"] }) =>
+    fractionsSchema[fraction]};
 `;
 
 export default Split;

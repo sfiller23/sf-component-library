@@ -2,15 +2,15 @@ import { styled } from "styled-components";
 import { spaceSchema } from "../../utils/theme";
 
 interface ColumnsProps {
-  columns: number;
+  columns?: number;
   gutter?: keyof typeof spaceSchema;
 }
 
 const Columns = styled.div<ColumnsProps>`
-  --columns: ${({ columns = 1 }) => columns};
+  --columns: 2;
   display: grid;
-  gap: ${({ gutter = spaceSchema.l }) => spaceSchema[gutter]};
-  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: ${({ gutter = spaceSchema.xs }) => spaceSchema[gutter]};
+  grid-template-columns: repeat(2, 1fr);
 `;
 
 export default Columns;

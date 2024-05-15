@@ -1,8 +1,8 @@
-export interface SpaceSchemaProps {
+export interface IKeyStringRem {
   [key: string]: `${number}rem`;
 }
 
-export const spaceSchema: SpaceSchemaProps = {
+export const spaceSchema: IKeyStringRem = {
   xs: "0.125rem",
   s: "0.25rem",
   m: "0.5rem",
@@ -12,11 +12,11 @@ export const spaceSchema: SpaceSchemaProps = {
   none: "0rem",
 };
 
-export interface FractionSchemaProps {
+export interface IKeyString {
   [key: string]: string;
 }
 
-export const fractionsSchema: FractionSchemaProps = {
+export const fractionsSchema: IKeyString = {
   "1/4": "1fr 3fr",
   "1/3": "1fr 2fr",
   "1/2": "1fr 1fr",

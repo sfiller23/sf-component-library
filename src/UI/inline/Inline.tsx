@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { SpaceSchemaProps, spaceSchema } from "../../utils/theme";
+import { spaceSchema } from "../../utils/theme";
 
 interface justifyAlignMap {
   start: string;
@@ -11,9 +11,9 @@ interface justifyAlignMap {
 }
 
 export interface InlineProps {
-  gutter?: keyof SpaceSchemaProps;
-  justify: keyof justifyAlignMap;
-  align: keyof justifyAlignMap;
+  gutter?: keyof typeof spaceSchema;
+  justify?: keyof justifyAlignMap;
+  align?: keyof justifyAlignMap;
 }
 
 const justifyAlignMapObj: justifyAlignMap = {
@@ -26,16 +26,16 @@ const justifyAlignMapObj: justifyAlignMap = {
 };
 
 const InlineBundle = styled.div<InlineProps>`
-  --gutter: ${({ gutter = spaceSchema.l }) => spaceSchema[gutter]};
+  --gutter: ${({ gutter = spaceSchema.xs }) => spaceSchema[gutter]};
   display: flex;
   flex-wrap: wrap;
   gap: var(--gutter);
 
-  justify-content: ${(props) =>
-    justifyAlignMapObj[props.justify] ?? justifyAlignMapObj.start};
+  justify-content: ${({ justify = justifyAlignMapObj.evenly }) =>
+    justifyAlignMapObj[justify as keyof typeof justifyAlignMapObj]};
 
-  align-items: ${(props) =>
-    justifyAlignMapObj[props.align] ?? justifyAlignMapObj.start};
+  align-items: ${({ align = justifyAlignMapObj.center }) =>
+    justifyAlignMapObj[align as keyof typeof justifyAlignMapObj]};
 `;
 
 export default InlineBundle;

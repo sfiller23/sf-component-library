@@ -9,7 +9,7 @@ interface VcenteredAttrsProps {
 
 interface VcenteredProps {
   minHeight?: string;
-  gutter?: keyof typeof spaceSchema | keyof (typeof spaceSchema)[];
+  gutter?: keyof typeof spaceSchema;
 }
 
 const Vcentered = styled.div.attrs(
@@ -26,7 +26,7 @@ const Vcentered = styled.div.attrs(
   },
 )<VcenteredProps & VcenteredAttrsProps>`
   display: grid;
-  gap: ${({ gutter = "l" }) => spaceSchema[gutter as keyof typeof spaceSchema]};
+  gap: ${({ gutter = spaceSchema.xs }) => spaceSchema[gutter]};
   min-block-size: ${(props) => props.minHeight ?? "100vh"};
   grid-template-rows: ${({ top, bottom }) =>
     top && bottom
