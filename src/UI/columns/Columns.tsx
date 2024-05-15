@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import { Children, PropsWithChildren } from "react";
 import { styled } from "styled-components";
 import { spaceSchema } from "../../utils/theme";
 
@@ -8,7 +8,7 @@ interface ColumnsProps {
 }
 
 const Columns = styled.div<PropsWithChildren<ColumnsProps>>`
-  --columns: ${({ children }) => Array(children).length};
+  --columns: ${({ children }) => Children.count(children)};
   --pattern: ${({ evenly = true }) => (evenly ? "1fr" : "auto")};
   display: grid;
   gap: ${({ gutter = spaceSchema.xs }) => spaceSchema[gutter]};
