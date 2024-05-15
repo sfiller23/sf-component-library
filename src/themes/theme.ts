@@ -1,4 +1,4 @@
-interface ITheme {
+export interface ITheme {
   spaceSchema: IKeyStringRem;
   fractionsSchema: IKeyString;
 }
