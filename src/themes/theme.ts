@@ -1,13 +1,20 @@
 export interface ITheme {
-  spaceSchema: IKeyStringRem;
-  fractionsSchema: IKeyString;
+  spaceSchema: ISpaceSchema;
+  fractionsSchema: IFractionsSchema;
 }
 
-export interface IKeyStringRem {
+export interface ISpaceSchema {
   [key: string]: `${number}rem`;
+  xs: `${number}rem`;
+  s: `${number}rem`;
+  m: `${number}rem`;
+  l: `${number}rem`;
+  xl: `${number}rem`;
+  xxl: `${number}rem`;
+  none: `${number}rem`;
 }
 
-export const spaceSchema: IKeyStringRem = {
+export const spaceSchema: ISpaceSchema = {
   xs: "0.125rem",
   s: "0.25rem",
   m: "0.5rem",
@@ -17,11 +24,17 @@ export const spaceSchema: IKeyStringRem = {
   none: "0rem",
 };
 
-export interface IKeyString {
-  [key: string]: string;
+export interface IFractionsSchema {
+  "1/4": string;
+  "1/3": string;
+  "1/2": string;
+  "2/3": string;
+  "3/4": string;
+  "auto-start": string;
+  "auto-end": string;
 }
 
-export const fractionsSchema: IKeyString = {
+export const fractionsSchema: IFractionsSchema = {
   "1/4": "1fr 3fr",
   "1/3": "1fr 2fr",
   "1/2": "1fr 1fr",

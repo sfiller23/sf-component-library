@@ -17,10 +17,9 @@ const StyledTypography = styled.p<TypographyProps>`
 `;
 
 const Typography = (props: TypographyProps) => {
-  const { children, as = "p", color } = props;
-  console.log(color);
+  const { children, as = "p", ...otherProps } = props;
   return (
-    <StyledTypography as={as} color={color}>
+    <StyledTypography as={as} {...otherProps}>
       {children}
     </StyledTypography>
   );
