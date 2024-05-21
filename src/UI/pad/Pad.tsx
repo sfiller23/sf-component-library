@@ -7,7 +7,8 @@ interface PaddingProps {
 
 const Pad = styled.div<PaddingProps>`
   padding: ${(props) => {
-    return [String(props.padding)]
+    return String(props.padding)
+      .split(" ")
       .map((padKey) => spaceSchema[padKey])
       .join(" ");
   }};

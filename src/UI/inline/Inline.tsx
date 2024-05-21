@@ -1,35 +1,21 @@
 import { styled } from "styled-components";
 import { spaceSchema } from "../../themes/theme";
-
-interface justifyAlignMap {
-  start: string;
-  end: string;
-  center: string;
-  between: string;
-  around: string;
-  evenly: string;
-}
+import { justifyAlignMap, justifyAlignMapObj } from "../../utils/common";
 
 export interface InlineProps {
   gutter?: keyof typeof spaceSchema;
   justify?: keyof justifyAlignMap;
   align?: keyof justifyAlignMap;
+  background?: string;
 }
-
-const justifyAlignMapObj: justifyAlignMap = {
-  start: "flex-start",
-  end: "flex-end",
-  center: "center",
-  between: "space-between",
-  around: "space-around",
-  evenly: "space-evenly",
-};
 
 const InlineBundle = styled.div<InlineProps>`
   --gutter: ${({ gutter = spaceSchema.xs }) => spaceSchema[gutter]};
   display: flex;
   flex-wrap: wrap;
   gap: var(--gutter);
+
+  background-color: ${({ background = "transparent" }) => background};
 
   justify-content: ${({ justify = justifyAlignMapObj.evenly }) =>
     justifyAlignMapObj[justify as keyof typeof justifyAlignMapObj]};

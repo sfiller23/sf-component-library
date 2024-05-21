@@ -1,23 +1,22 @@
-import { PropsWithChildren } from "react";
 import styled from "styled-components";
+import { justifyAlignMap, justifyAlignMapObj } from "../../utils/common";
 
-interface ButtonProps {
-  onClick: () => void;
-  disabled?: boolean;
-  backGroundColor?: string;
+export interface ButtonProps {
+  background?: string;
+  radius?: string;
+  color?: string;
+  gap?: string;
+  justify?: keyof justifyAlignMap;
 }
 
-const StyledButton = styled.button<ButtonProps>`
-  background-color: ${({ backGroundColor = "white" }) => backGroundColor};
+const Button = styled.button<ButtonProps>`
+  display: flex;
+  align-items: center;
+  justify-content: ${({ justify = "evenly" }) => justifyAlignMapObj[justify]};
+  gap: ${({ gap = "10px" }) => gap};
+  background-color: ${({ background = "blue" }) => background};
+  border-radius: ${({ radius = "10px" }) => radius};
+  color: ${({ color = "white" }) => color};
 `;
-
-const Button = (props: PropsWithChildren<ButtonProps>) => {
-  const { onClick, disabled = false, children } = props;
-  return (
-    <StyledButton onClick={onClick} disabled={disabled}>
-      {children}
-    </StyledButton>
-  );
-};
 
 export default Button;

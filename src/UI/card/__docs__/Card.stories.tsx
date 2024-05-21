@@ -2,15 +2,13 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Example from "./Example";
 
 const meta: Meta<typeof Example> = {
-  title: "Column",
+  title: "Card",
   component: Example,
 };
 
 export default meta;
 type Story = StoryObj<typeof Example>;
 
-export const Primary: Story = {
-  args: {
-    $span: 2,
-  },
+export const simple: Story = {
+  args: {},
 };
