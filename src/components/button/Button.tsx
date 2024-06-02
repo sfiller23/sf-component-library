@@ -17,6 +17,10 @@ const Button = styled.button<ButtonProps>`
   background-color: ${({ background = "blue" }) => background};
   border-radius: ${({ radius = "10px" }) => radius};
   color: ${({ color = "white" }) => color};
+
+  img {
+    width: auto !important;
+  }
 `;
 
 export default Button;
