@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Pad from "../Pad";
+import React from "react";
+import Pad from "./Example";
 
 const meta: Meta<typeof Pad> = {
   title: "Pad",
@@ -9,9 +10,30 @@ const meta: Meta<typeof Pad> = {
 export default meta;
 type Story = StoryObj<typeof Pad>;
 
-export const simple: Story = {
+export const Different: Story = {
   args: {
-    padding: "xl",
-    children: "Hello World",
+    space: "s m l xl",
+    children: <div style={{ border: "1px solid black" }}>Child</div>,
+  },
+};
+
+export const Even: Story = {
+  args: {
+    space: "xl",
+    children: <div style={{ border: "1px solid black" }}>Child</div>,
+  },
+};
+
+export const Vertical: Story = {
+  args: {
+    space: "xl none",
+    children: <div style={{ border: "1px solid black" }}>Child</div>,
+  },
+};
+
+export const Horizontal: Story = {
+  args: {
+    space: "none xl",
+    children: <div style={{ border: "1px solid black" }}>Child</div>,
   },
 };

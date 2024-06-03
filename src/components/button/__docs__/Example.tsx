@@ -6,7 +6,7 @@ const Example: FC<ButtonProps> = ({
   onClick = () => {},
   primary = true,
   size = "small",
-  text = "Button",
+  text = "Test",
 }) => {
   return (
     <div

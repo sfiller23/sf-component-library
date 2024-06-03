@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import { styled } from "styled-components";
-import { spaceSchema } from "../../themes/theme";
+import { ISpaceSchema, spaceSchema } from "../../themes/theme";
 
 interface VcenteredAttrsProps {
   top?: React.ReactNode;
@@ -9,7 +9,7 @@ interface VcenteredAttrsProps {
 
 interface VcenteredProps {
   $minHeight?: string;
-  gutter?: keyof typeof spaceSchema;
+  gap?: keyof ISpaceSchema;
 }
 
 const Vcentered = styled.div.attrs(
@@ -26,7 +26,7 @@ const Vcentered = styled.div.attrs(
   },
 )<VcenteredProps & VcenteredAttrsProps>`
   display: grid;
-  gap: ${({ gutter = spaceSchema.none }) => spaceSchema[gutter]};
+  gap: ${({ gap = "xs" }) => spaceSchema[gap as keyof ISpaceSchema]};
   min-block-size: ${(props) => props.$minHeight ?? "100vh"};
   grid-template-rows: ${({ top, bottom }) =>
     top && bottom

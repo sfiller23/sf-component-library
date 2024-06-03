@@ -1,15 +1,12 @@
 import { styled } from "styled-components";
-import { spaceSchema } from "../../themes/theme";
+import { ISpaceSchema, spaceSchema } from "../../themes/theme";
+import { PaddingMarginProps } from "../../utils/common";
 
-interface PaddingProps {
-  padding: keyof typeof spaceSchema | keyof (typeof spaceSchema)[];
-}
-
-const Pad = styled.div<PaddingProps>`
+const Pad = styled.div<PaddingMarginProps>`
   padding: ${(props) => {
-    return String(props.padding)
+    return props.space
       .split(" ")
-      .map((padKey) => spaceSchema[padKey])
+      .map((padKey) => spaceSchema[padKey as keyof ISpaceSchema])
       .join(" ");
   }};
 `;

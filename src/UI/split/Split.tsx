@@ -9,12 +9,12 @@ import {
 
 interface SplitProps {
   fraction?: keyof IFractionsSchema;
-  gutter?: keyof ISpaceSchema;
+  gap?: keyof ISpaceSchema;
 }
 
 const Split = styled.div<PropsWithChildren<SplitProps>>`
   display: grid;
-  gap: ${({ gutter = spaceSchema.xs }) => spaceSchema[gutter]};
+  gap: ${({ gap = "xs" }) => spaceSchema[gap]};
   grid-template-columns: ${({ fraction = "1/2" }) => fractionsSchema[fraction]};
 `;
 

@@ -2,9 +2,8 @@ export interface ITheme {
   spaceSchema: ISpaceSchema;
   fractionsSchema: IFractionsSchema;
 }
-
+// The ISpaceSchema interface is used for margins, paddings, and other gaps.
 export interface ISpaceSchema {
-  [key: string]: `${number}rem`;
   xs: `${number}rem`;
   s: `${number}rem`;
   m: `${number}rem`;

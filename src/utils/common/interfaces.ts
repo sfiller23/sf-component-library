@@ -1,3 +1,5 @@
+import { ISpaceSchema } from "../../themes/theme";
+
 export interface justifyAlignMap {
   start: string;
   end: string;
@@ -10,4 +12,8 @@ export interface justifyAlignMap {
 export interface InputErrorProps {
   error: string;
   color?: string;
+}
+
+export interface PaddingMarginProps {
+  space: `${keyof ISpaceSchema | undefined} ${keyof ISpaceSchema | undefined} ${keyof ISpaceSchema | undefined} ${keyof ISpaceSchema | undefined}`;
 }
