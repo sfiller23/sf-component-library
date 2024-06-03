@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { justifyAlignMap, justifyAlignMapObj } from "../../utils/common";
 
 export interface ButtonProps {
+  //text: string; normalize typography and buttons at the end of the project
   background?: string;
   radius?: string;
   color?: string;
@@ -12,7 +13,8 @@ export interface ButtonProps {
 const Button = styled.button<ButtonProps>`
   display: flex;
   align-items: center;
-  justify-content: ${({ justify = "evenly" }) => justifyAlignMapObj[justify]};
+  justify-content: ${({ justify = "evenSpace" }) =>
+    justifyAlignMapObj[justify]};
   gap: ${({ gap = "10px" }) => gap};
   background-color: ${({ background = "blue" }) => background};
   border-radius: ${({ radius = "10px" }) => radius};

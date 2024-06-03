@@ -6,7 +6,7 @@ import * as Pad from "./Pad.stories.tsx";
 
 # Pad
 
-The Pad Component is a wrapper for creating spaces around the child or children components using the theme schema for spaces, Keeping the padding one line shortcut logic.
+The Pad Component is a wrapper for creating spaces around the child or children components using the theme schema for spaces Keeping the padding one-line shortcut logic.
 
 #### Example
 
@@ -37,7 +37,8 @@ export default Example;
 #### Schema
 
 ```ts
-export const spaceSchema: ISpaceSchema = {
+export type SpaceSchemaKeys = "xs" | "s" | "m" | "l" | "xl" | "xxl" | "none";
+export const spaceSchema: Record<SpaceSchemaKeys, `${number}rem`> = {
   xs: "0.125rem",
   s: "0.25rem",
   m: "0.5rem",

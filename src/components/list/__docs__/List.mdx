@@ -1,0 +1,51 @@
+import { Canvas, Meta } from "@storybook/blocks";
+
+import * as List from "./List.stories.tsx";
+
+<Meta of={List} title="List" />
+
+# List
+
+The List Component Helps rendering common patterns of the ul element.
+
+#### Example
+
+<Canvas of={List.Simple} />
+
+## Usage
+
+```ts
+import {List} from "@cman430/sf-component-library";
+
+const ListItem = ({ text }: { text: string }) => <div>{text}</div>
+
+const Example = () => {
+const itemsData: [{ text: "Item 1" }, { text: "Item 2" }, { text: "Item 3" }];
+  return (
+    <List items={itemsData} ItemComponent={ListItem}/>
+  );
+};
+
+export default Example;
+```
+
+#### Arguments
+
+- **ItemComponent** _`SF<any>`_ - A functional component that will be rendered as a list item (inside the li element).
+- **items** _`Array<object>`_ - An array of objects with the data that the ItemComponent will present (The ItemComponent props should much the items object).
+- **$itemsMargin** _`SpaceSchemaKeys`_ - A string that represents the space value according to the theme space schema.
+
+#### Schema
+
+```ts
+export type SpaceSchemaKeys = "xs" | "s" | "m" | "l" | "xl" | "xxl" | "none";
+export const spaceSchema: Record<SpaceSchemaKeys, `${number}rem`> = {
+  xs: "0.125rem",
+  s: "0.25rem",
+  m: "0.5rem",
+  l: "1rem",
+  xl: "2rem",
+  xxl: "4rem",
+  none: "0rem",
+};
+```

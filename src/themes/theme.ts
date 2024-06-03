@@ -1,19 +1,12 @@
 export interface ITheme {
-  spaceSchema: ISpaceSchema;
+  spaceSchema: typeof spaceSchema;
   fractionsSchema: IFractionsSchema;
 }
-// The ISpaceSchema interface is used for margins, paddings, and other gaps.
-export interface ISpaceSchema {
-  xs: `${number}rem`;
-  s: `${number}rem`;
-  m: `${number}rem`;
-  l: `${number}rem`;
-  xl: `${number}rem`;
-  xxl: `${number}rem`;
-  none: `${number}rem`;
-}
 
-export const spaceSchema: ISpaceSchema = {
+// The SpaceSchema interface is used for margins, paddings, and other gaps.
+
+export type SpaceSchemaKeys = "xs" | "s" | "m" | "l" | "xl" | "xxl" | "none";
+export const spaceSchema: Record<SpaceSchemaKeys, `${number}rem`> = {
   xs: "0.125rem",
   s: "0.25rem",
   m: "0.5rem",
@@ -41,6 +34,14 @@ export const fractionsSchema: IFractionsSchema = {
   "3/4": "3fr 1fr",
   "auto-start": "auto 1fr",
   "auto-end": "1fr auto",
+};
+
+export type ButtonSizes = "small" | "medium" | "large";
+
+export const ButtonSizesObj: Record<ButtonSizes, `${number}rem`> = {
+  small: "10rem",
+  medium: "15rem",
+  large: "20rem",
 };
 
 export const theme: ITheme = {

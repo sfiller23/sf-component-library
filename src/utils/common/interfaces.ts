@@ -4,9 +4,9 @@ export interface justifyAlignMap {
   start: string;
   end: string;
   center: string;
-  between: string;
-  around: string;
-  evenly: string;
+  maxSpace?: string;
+  midSpace?: string;
+  evenSpace?: string;
 }
 
 export interface InputErrorProps {

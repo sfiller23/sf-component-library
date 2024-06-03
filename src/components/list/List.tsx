@@ -1,16 +1,17 @@
 import { FC } from "react";
 import { styled } from "styled-components";
+import { spaceSchema } from "../../themes/theme";
 
 interface ListProps {
   items: Array<object>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ItemComponent: FC<any>;
-  $itemsMargin?: string;
+  $itemsMargin?: keyof typeof spaceSchema;
 }
 
 const StyledList = styled.ul<Partial<ListProps>>`
   li:not(:last-child) {
-    margin-bottom: ${({ $itemsMargin = "0.3rem" }) => $itemsMargin};
+    margin-bottom: ${({ $itemsMargin = "xs" }) => spaceSchema[$itemsMargin]};
   }
 `;
 
