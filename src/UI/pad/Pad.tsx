@@ -6,7 +6,7 @@ const Pad = styled.div<PaddingMarginProps>`
   padding: ${(props) => {
     return props.space
       .split(" ")
-      .map((padKey) => spaceSchema[padKey as keyof ISpaceSchema])
+      .map((padKey) => spaceSchema[padKey as ISpaceSchema])
       .join(" ");
   }};
 `;

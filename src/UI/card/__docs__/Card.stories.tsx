@@ -9,6 +9,12 @@ const meta: Meta<typeof Example> = {
 export default meta;
 type Story = StoryObj<typeof Example>;
 
-export const simple: Story = {
+export const HalfButtonOutEffect: Story = {
   args: {},
+};
+
+export const Simple: Story = {
+  args: {
+    bottomButtonEffect: false,
+  },
 };

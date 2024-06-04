@@ -9,7 +9,7 @@ interface VcenteredAttrsProps {
 
 interface VcenteredProps {
   $minHeight?: string;
-  gap?: keyof ISpaceSchema;
+  gap?: ISpaceSchema;
 }
 
 const Vcentered = styled.div.attrs(
@@ -26,7 +26,7 @@ const Vcentered = styled.div.attrs(
   },
 )<VcenteredProps & VcenteredAttrsProps>`
   display: grid;
-  gap: ${({ gap = "xs" }) => spaceSchema[gap as keyof ISpaceSchema]};
+  gap: ${({ gap = "xs" }) => spaceSchema[gap as ISpaceSchema]};
   min-block-size: ${(props) => props.$minHeight ?? "100vh"};
   grid-template-rows: ${({ top, bottom }) =>
     top && bottom

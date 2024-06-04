@@ -16,6 +16,8 @@ export const spaceSchema: Record<SpaceSchemaKeys, `${number}rem`> = {
   none: "0rem",
 };
 
+export type ISpaceSchema = keyof typeof spaceSchema;
+
 export interface IFractionsSchema {
   "1/4": string;
   "1/3": string;

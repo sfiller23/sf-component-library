@@ -9,7 +9,7 @@ import {
 
 interface SplitProps {
   fraction?: keyof IFractionsSchema;
-  gap?: keyof ISpaceSchema;
+  gap?: ISpaceSchema;
 }
 
 const Split = styled.div<PropsWithChildren<SplitProps>>`

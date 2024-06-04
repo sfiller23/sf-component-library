@@ -3,7 +3,7 @@ import { ISpaceSchema, spaceSchema } from "../../themes/theme";
 
 interface GridProps {
   minItemWidth: string;
-  gap?: keyof ISpaceSchema;
+  gap?: ISpaceSchema;
 }
 
 const Grid = styled.div<GridProps>`

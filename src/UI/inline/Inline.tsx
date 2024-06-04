@@ -3,7 +3,7 @@ import { ISpaceSchema, spaceSchema } from "../../themes/theme";
 import { justifyAlignMap, justifyAlignMapObj } from "../../utils/common";
 
 export interface InlineProps {
-  gap?: keyof ISpaceSchema;
+  gap?: ISpaceSchema;
   justify?: keyof justifyAlignMap;
   align?: keyof justifyAlignMap;
   background?: string;
@@ -17,7 +17,7 @@ const InlineBundle = styled.div<InlineProps>`
 
   background-color: ${({ background = "transparent" }) => background};
 
-  justify-content: ${({ justify = justifyAlignMapObj.evenly }) =>
+  justify-content: ${({ justify = justifyAlignMapObj.center }) =>
     justifyAlignMapObj[justify as keyof typeof justifyAlignMapObj]};
 
   align-items: ${({ align = justifyAlignMapObj.center }) =>

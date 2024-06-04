@@ -4,7 +4,7 @@ import { ISpaceSchema, spaceSchema } from "../../themes/theme";
 import { justifyAlignMap, justifyAlignMapObj } from "../../utils/common";
 
 interface RowsProps {
-  gap?: keyof ISpaceSchema;
+  gap?: ISpaceSchema;
   justify?: keyof justifyAlignMap;
   align?: keyof justifyAlignMap;
 }

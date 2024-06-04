@@ -2,8 +2,8 @@ import { Children, PropsWithChildren } from "react";
 import { styled } from "styled-components";
 import { ISpaceSchema, spaceSchema } from "../../themes/theme";
 
-interface ColumnsProps {
-  gap?: keyof ISpaceSchema;
+export interface ColumnsProps {
+  gap?: ISpaceSchema;
   evenly?: boolean;
 }
 

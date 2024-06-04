@@ -12,11 +12,13 @@ export interface CardProps {
   gap?: string;
   $imgWidth?: string;
   bottomButtonEffect?: boolean;
+  width?: string;
 }
 
 const StyledCard = styled.div<CardProps>`
   background-color: ${({ background = "blue" }) => background};
   border-radius: ${({ radius = "10px" }) => radius};
+  width: ${({ width = "100%" }) => width};
 
   img {
     width: ${({ $imgWidth = "30%" }) => $imgWidth};
