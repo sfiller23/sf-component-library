@@ -1,51 +1,36 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import React from "react";
+import { ISpaceSchema } from "../../../themes/theme";
 import Columns, { ColumnsProps } from "../Columns";
 
-const meta: Meta<typeof Columns> = {
+export default {
   title: "Columns",
   component: Columns,
+  argTypes: {
+    gap: {
+      control: "select",
+      options: ["xs", "s", "m", "l", "xl", "xxl", "none"] as ISpaceSchema[],
+    },
+    evenly: { control: "boolean" },
+  },
+} as Meta;
+
+const Template: StoryFn<ColumnsProps> = (args) => (
+  <Columns {...args}>
+    <div>Child 1</div>
+    <div>Child 2</div>
+    <div>Child 3</div>
+  </Columns>
+);
+
+export const Default = Template.bind({});
+Default.args = {
+  gap: "m",
+  evenly: false,
 };
 
-export default meta;
-
-type Story = StoryObj<typeof Columns>;
-
-const Template: Story = (args: ColumnsProps) => {
-  return (
-    <Columns {...args}>
-      <div>Child 1</div>
-      <div>Child 2</div>
-    </Columns>
-  );
+export const EvenlyDistributed = Template.bind({});
+EvenlyDistributed.args = {
+  gap: "m",
+  evenly: true,
 };
-
-const Template2: Story = (args: ColumnsProps) => {
-  return (
-    <Columns {...args}>
-      <div>Child 1</div>
-      <div>Child 2</div>
-      <div>Child 3</div>
-    </Columns>
-  );
-};
-
-const Template3: Story = (args: ColumnsProps) => {
-  const { gap, evenly } = args;
-  return (
-    <Columns gap={gap} evenly={evenly}>
-      <div>Child 1</div>
-      <div>Child 2</div>
-      <div>Child 3</div>
-    </Columns>
-  );
-};
-
-export const TwoColumnsEvenlySpread = Template;
-TwoColumnsEvenlySpread.args = { gap: "none", evenly: false };
-
-export const ThreeColumnsEvenlySpread = Template2;
-ThreeColumnsEvenlySpread.args = { gap: "none", evenly: false };
-
-export const ThreeColumns = Template3;
-ThreeColumns.args = { gap: "xl", evenly: false };

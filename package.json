@@ -28,6 +28,7 @@
     "@storybook/addon-essentials": "^8.1.5",
     "@storybook/addon-interactions": "^8.1.5",
     "@storybook/addon-links": "^8.1.5",
+    "@storybook/addon-mdx-gfm": "^8.1.5",
     "@storybook/addon-onboarding": "^8.1.5",
     "@storybook/blocks": "^8.1.5",
     "@storybook/react": "^8.1.5",
@@ -45,12 +46,12 @@
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.8.0",
-    "styled-components": "^6.1.8",
     "husky": "^9.0.11",
     "jsdom": "^24.0.0",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "storybook": "^8.1.5",
+    "styled-components": "^6.1.8",
     "typescript": "^5.4.5",
     "vite": "^5.2.10",
     "vite-plugin-dts": "^3.9.0",
@@ -65,5 +66,8 @@
       "npm run format",
       "npm run lint"
     ]
+  },
+  "dependencies": {
+    "remark-gfm": "^4.0.0"
   }
 }
