@@ -23,4 +23,6 @@ const Hcentered = styled.div<HcenteredProps>`
   `}
 `;
 
+Hcentered.displayName = "Hcentered";
+
 export default Hcentered;

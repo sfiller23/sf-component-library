@@ -1,0 +1,29 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as Columns from "./Columns.stories.tsx";
+
+<Meta of={Columns} title="Columns" />
+
+# Columns
+
+Columns
+
+#### Example
+
+<Canvas of={Columns.EvenlyDistributed} />
+
+#### Arguments
+
+#### Schema
+
+```ts
+export type SpaceSchemaKeys = "xs" | "s" | "m" | "l" | "xl" | "xxl" | "none";
+export const spaceSchema: Record<SpaceSchemaKeys, `${number}rem`> = {
+  xs: "0.125rem",
+  s: "0.25rem",
+  m: "0.5rem",
+  l: "1rem",
+  xl: "2rem",
+  xxl: "4rem",
+  none: "0rem",
+};
+```

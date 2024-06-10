@@ -2,12 +2,12 @@ import { PropsWithChildren } from "react";
 import { styled } from "styled-components";
 import { ISpaceSchema, spaceSchema } from "../../themes/theme";
 
-interface VcenteredAttrsProps {
+export interface VcenteredAttrsProps {
   top?: React.ReactNode;
   bottom?: React.ReactNode;
 }
 
-interface VcenteredProps {
+export interface VcenteredProps {
   $minHeight?: string;
   gap?: ISpaceSchema;
 }
@@ -41,5 +41,7 @@ const Vcentered = styled.div.attrs(
     align-self: center;
   }
 `;
+
+Vcentered.displayName = "Vcentered";
 
 export default Vcentered;

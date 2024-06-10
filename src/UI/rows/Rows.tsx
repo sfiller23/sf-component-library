@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import { ISpaceSchema, spaceSchema } from "../../themes/theme";
 import { justifyAlignMap, justifyAlignMapObj } from "../../utils/common";
 
-interface RowsProps {
+export interface RowsProps {
   gap?: ISpaceSchema;
   justify?: keyof justifyAlignMap;
   align?: keyof justifyAlignMap;
@@ -15,5 +15,7 @@ const Rows = styled.div<PropsWithChildren<RowsProps>>`
   align-content: ${({ align = "center" }) => justifyAlignMapObj[align]};
   gap: ${({ gap = "xs" }) => spaceSchema[gap]};
 `;
+
+Rows.displayName = "Rows";
 
 export default Rows;

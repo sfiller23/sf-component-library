@@ -9,11 +9,10 @@ export interface InlineProps {
   background?: string;
 }
 
-const InlineBundle = styled.div<InlineProps>`
-  --gap: ${({ gap = "xs" }) => spaceSchema[gap]};
+const Inline = styled.div<InlineProps>`
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap);
+  gap: ${({ gap = "xs" }) => spaceSchema[gap]};
 
   background-color: ${({ background = "transparent" }) => background};
 
@@ -24,4 +23,6 @@ const InlineBundle = styled.div<InlineProps>`
     justifyAlignMapObj[align as keyof typeof justifyAlignMapObj]};
 `;
 
-export default InlineBundle;
+Inline.displayName = "Inline";
+
+export default Inline;

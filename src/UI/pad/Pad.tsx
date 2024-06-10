@@ -3,12 +3,14 @@ import { ISpaceSchema, spaceSchema } from "../../themes/theme";
 import { PaddingMarginProps } from "../../utils/common";
 
 const Pad = styled.div<PaddingMarginProps>`
-  padding: ${(props) => {
-    return props.space
+  padding: ${({ space = "xs" }) => {
+    return String(space)
       .split(" ")
       .map((padKey) => spaceSchema[padKey as ISpaceSchema])
       .join(" ");
   }};
 `;
+
+Pad.displayName = "Pad";
 
 export default Pad;

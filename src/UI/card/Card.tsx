@@ -9,7 +9,6 @@ import { styled } from "styled-components";
 export interface CardProps {
   background?: string;
   radius?: string;
-  gap?: string;
   $imgWidth?: string;
   bottomButtonEffect?: boolean;
   width?: string;

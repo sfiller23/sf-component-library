@@ -23,14 +23,16 @@ const Template: StoryFn<ColumnsProps> = (args) => (
   </Columns>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  gap: "m",
+export const EvenlyDistributed = Template.bind({});
+EvenlyDistributed.args = {};
+
+export const MaxContentDistributed = Template.bind({});
+MaxContentDistributed.args = {
   evenly: false,
 };
 
-export const EvenlyDistributed = Template.bind({});
-EvenlyDistributed.args = {
-  gap: "m",
-  evenly: true,
+export const MaxContentWithGap = Template.bind({});
+MaxContentWithGap.args = {
+  gap: "xl",
+  evenly: false,
 };

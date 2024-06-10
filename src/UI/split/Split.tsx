@@ -7,7 +7,7 @@ import {
   spaceSchema,
 } from "../../themes/theme";
 
-interface SplitProps {
+export interface SplitProps {
   fraction?: keyof IFractionsSchema;
   gap?: ISpaceSchema;
 }
@@ -17,5 +17,7 @@ const Split = styled.div<PropsWithChildren<SplitProps>>`
   gap: ${({ gap = "xs" }) => spaceSchema[gap]};
   grid-template-columns: ${({ fraction = "1/2" }) => fractionsSchema[fraction]};
 `;
+
+Split.displayName = "Split";
 
 export default Split;

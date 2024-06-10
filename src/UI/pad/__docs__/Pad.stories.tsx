@@ -1,39 +1,41 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
-import Pad from "./Example";
+import { styled } from "styled-components";
+import Pad from "../Pad";
 
-const meta: Meta<typeof Pad> = {
+export default {
   title: "Pad",
   component: Pad,
+} as Meta;
+
+const StyledDiv = styled.div`
+  border: 1px solid black;
+`;
+
+const Template: StoryFn<{ $span?: number }> = (args) => (
+  <StyledDiv>
+    <Pad {...args}>
+      <StyledDiv>div</StyledDiv>
+    </Pad>
+  </StyledDiv>
+);
+
+export const Different = Template.bind({});
+Different.args = {
+  space: "s m l xl",
 };
 
-export default meta;
-type Story = StoryObj<typeof Pad>;
-
-export const Different: Story = {
-  args: {
-    space: "s m l xl",
-    children: <div style={{ border: "1px solid black" }}>Child</div>,
-  },
+export const Even = Template.bind({});
+Even.args = {
+  space: "xl",
 };
 
-export const Even: Story = {
-  args: {
-    space: "xl",
-    children: <div style={{ border: "1px solid black" }}>Child</div>,
-  },
+export const Vertical = Template.bind({});
+Vertical.args = {
+  space: "xl none",
 };
 
-export const Vertical: Story = {
-  args: {
-    space: "xl none",
-    children: <div style={{ border: "1px solid black" }}>Child</div>,
-  },
-};
-
-export const Horizontal: Story = {
-  args: {
-    space: "none xl",
-    children: <div style={{ border: "1px solid black" }}>Child</div>,
-  },
+export const Horizontal = Template.bind({});
+Horizontal.args = {
+  space: "none xl",
 };
