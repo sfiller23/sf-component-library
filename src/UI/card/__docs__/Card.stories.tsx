@@ -20,7 +20,7 @@ export default {
 
 const Template: StoryFn<{ $span?: number }> = (args) => (
   <Card {...args}>
-    <Pad space="l">
+    <Pad $space="l">
       <Inline align="center" justify="start" gap="l">
         <img src={ExampleImg} alt="house" />
         <Rows align="start" justify="evenSpace" gap="l">

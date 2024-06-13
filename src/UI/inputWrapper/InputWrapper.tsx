@@ -10,7 +10,7 @@ interface InputWrapperProps {
   color?: string;
   padding?: string;
   borderRadius?: string;
-  bordercolor?: string;
+  borderColor?: string;
   borderWidth?: string;
   gap?: string;
 }
@@ -25,7 +25,7 @@ const StyledInputWrapper = styled.div<InputWrapperProps>`
     color: ${({ color = "black" }) => color};
     padding: ${({ padding = "10px" }) => padding};
     border-radius: ${({ borderRadius = "5px" }) => borderRadius};
-    border-color: ${({ bordercolor = "black" }) => bordercolor};
+    border-color: ${({ borderColor = "black" }) => borderColor};
     border-width: ${({ borderWidth = "1px" }) => borderWidth};
   }
 `;

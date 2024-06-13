@@ -3,8 +3,8 @@ import { ISpaceSchema, spaceSchema } from "../../themes/theme";
 import { PaddingMarginProps } from "../../utils/common";
 
 const Pad = styled.div<PaddingMarginProps>`
-  padding: ${({ space = "xs" }) => {
-    return String(space)
+  padding: ${({ $space = "xs" }) => {
+    return String($space)
       .split(" ")
       .map((padKey) => spaceSchema[padKey as ISpaceSchema])
       .join(" ");

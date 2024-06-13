@@ -15,5 +15,5 @@ export interface InputErrorProps {
 }
 
 export interface PaddingMarginProps {
-  space?: `${ISpaceSchema | undefined} ${ISpaceSchema | undefined} ${ISpaceSchema | undefined} ${ISpaceSchema | undefined}`;
+  $space?: `${ISpaceSchema | undefined} ${ISpaceSchema | undefined} ${ISpaceSchema | undefined} ${ISpaceSchema | undefined}`;
 }
