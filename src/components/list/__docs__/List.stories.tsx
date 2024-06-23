@@ -23,7 +23,7 @@ export const WithMargin: Story = {
   args: {
     items: [{ text: "Item 1" }, { text: "Item 2" }, { text: "Item 3" }],
     ItemComponent: ({ text }: { text: string }) => <div>{text}</div>,
-    $itemsMargin: "l",
+    itemsMargin: "l",
   },
 };
 

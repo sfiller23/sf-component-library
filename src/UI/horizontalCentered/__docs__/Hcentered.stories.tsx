@@ -7,9 +7,9 @@ export default {
   title: "Hcentered",
   component: Hcentered,
   argTypes: {
-    $maxWidth: { control: "text" },
-    $centerText: { control: "boolean" },
-    $centerChildren: { control: "boolean" },
+    maxWidth: { control: "text" },
+    centerText: { control: "boolean" },
+    centerChildren: { control: "boolean" },
   },
 } as Meta;
 
@@ -31,16 +31,16 @@ Default.args = {};
 
 export const TextCentered = Template.bind({});
 TextCentered.args = {
-  $centerText: true,
+  centerText: true,
 };
 
 export const CenterTextOnly = Template.bind({});
 CenterTextOnly.args = {
-  $centerText: true,
-  $centerChildren: false,
+  centerText: true,
+  centerChildren: false,
 };
 export const CenterBlockOnly = Template.bind({});
 CenterBlockOnly.args = {
-  $centerText: false,
-  $centerChildren: true,
+  centerText: false,
+  centerChildren: true,
 };

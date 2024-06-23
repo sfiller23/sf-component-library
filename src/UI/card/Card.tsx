@@ -9,7 +9,7 @@ import { styled } from "styled-components";
 export interface CardProps {
   background?: string;
   radius?: string;
-  $imgWidth?: string;
+  imgWidth?: string;
   bottomButtonEffect?: boolean;
   width?: string;
 }
@@ -20,7 +20,7 @@ const StyledCard = styled.div<CardProps>`
   width: ${({ width = "100%" }) => width};
 
   img {
-    width: ${({ $imgWidth = "30%" }) => $imgWidth};
+    width: ${({ imgWidth = "30%" }) => imgWidth};
     object-fit: cover;
     border-radius: ${({ radius = "10px" }) => radius};
   }

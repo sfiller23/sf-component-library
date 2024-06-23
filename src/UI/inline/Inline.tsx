@@ -3,6 +3,7 @@ import { ISpaceSchema, spaceSchema } from "../../themes/theme";
 import { justifyAlignMap, justifyAlignMapObj } from "../../utils/common";
 
 export interface InlineProps {
+  width?: string;
   gap?: ISpaceSchema;
   justify?: keyof justifyAlignMap;
   align?: keyof justifyAlignMap;
@@ -10,6 +11,7 @@ export interface InlineProps {
 }
 
 const Inline = styled.div<InlineProps>`
+  width: ${({ width = "auto" }) => width};
   display: flex;
   flex-wrap: wrap;
   gap: ${({ gap = "xs" }) => spaceSchema[gap]};

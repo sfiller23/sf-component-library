@@ -6,12 +6,12 @@ interface ListProps {
   items: Array<object>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ItemComponent: FC<any>;
-  $itemsMargin?: keyof typeof spaceSchema;
+  itemsMargin?: keyof typeof spaceSchema;
 }
 
 const StyledList = styled.ul<Partial<ListProps>>`
   li:not(:last-child) {
-    margin-bottom: ${({ $itemsMargin = "xs" }) => spaceSchema[$itemsMargin]};
+    margin-bottom: ${({ itemsMargin = "xs" }) => spaceSchema[itemsMargin]};
   }
 `;
 
@@ -20,10 +20,10 @@ const StyledListItem = styled.li`
 `;
 
 const List = (props: ListProps) => {
-  const { items, ItemComponent, $itemsMargin } = props;
+  const { items, ItemComponent, itemsMargin } = props;
 
   return (
-    <StyledList $itemsMargin={$itemsMargin}>
+    <StyledList itemsMargin={itemsMargin}>
       {items.map((item, i) => (
         <StyledListItem key={i}>
           <ItemComponent {...item} />

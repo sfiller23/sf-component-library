@@ -7,6 +7,7 @@ export interface IOption {
   readonly color?: string;
   readonly isFixed?: boolean;
   readonly isDisabled?: boolean;
+  readonly rating?: string;
 }
 
 //// the styled select component is an example of how to style the select component without using the styles prop

@@ -12,15 +12,15 @@ export default {
   argTypes: {
     background: { control: "text" },
     radius: { control: "text" },
-    $imgWidth: { control: "text" },
+    imgWidth: { control: "text" },
     bottomButtonEffect: { control: "boolean" },
     width: { control: "text" },
   },
 } as Meta;
 
-const Template: StoryFn<{ $span?: number }> = (args) => (
+const Template: StoryFn<{ span?: number }> = (args) => (
   <Card {...args}>
-    <Pad $space="l">
+    <Pad space="l">
       <Inline align="center" justify="start" gap="l">
         <img src={ExampleImg} alt="house" />
         <Rows align="start" justify="evenSpace" gap="l">
@@ -36,7 +36,7 @@ const Template: StoryFn<{ $span?: number }> = (args) => (
   </Card>
 );
 
-const Template2: StoryFn<{ $span?: number }> = (args) => (
+const Template2: StoryFn<{ span?: number }> = (args) => (
   <Card {...args}>
     <Pad space="l">
       <Inline align="center" justify="start" gap="l">
@@ -56,7 +56,7 @@ const Template2: StoryFn<{ $span?: number }> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  $imgWidth: "30%",
+  imgWidth: "30%",
   width: "100%",
   background: "blue",
   bottomButtonEffect: true,
@@ -64,7 +64,7 @@ Default.args = {
 
 export const MoreNiceLooking = Template.bind({});
 MoreNiceLooking.args = {
-  $imgWidth: "30%",
+  imgWidth: "30%",
   width: "60%",
   background: "#98b7c1",
   bottomButtonEffect: true,
@@ -72,7 +72,7 @@ MoreNiceLooking.args = {
 
 export const NoHalfButtonOutEffect = Template2.bind({});
 NoHalfButtonOutEffect.args = {
-  $imgWidth: "30%",
+  imgWidth: "30%",
   width: "60%",
   background: "#98b7c1",
   bottomButtonEffect: false,

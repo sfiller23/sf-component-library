@@ -7,7 +7,7 @@ export default {
   title: "Column",
   component: Column,
   argTypes: {
-    $span: {
+    span: {
       control: "number",
     },
   },
@@ -17,7 +17,7 @@ const StyledColumn = styled(Column)`
   background-color: lightblue;
 `;
 
-const Template: StoryFn<{ $span?: number }> = (args) => (
+const Template: StoryFn<{ span?: number }> = (args) => (
   <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
     <StyledColumn {...args}>Column1</StyledColumn>
     <Column>Column2</Column>
@@ -27,15 +27,15 @@ const Template: StoryFn<{ $span?: number }> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  $span: 1,
+  span: 1,
 };
 
 export const TwoColumns = Template.bind({});
 TwoColumns.args = {
-  $span: 2,
+  span: 2,
 };
 
 export const ThreeColumns = Template.bind({});
 ThreeColumns.args = {
-  $span: 3,
+  span: 3,
 };

@@ -13,7 +13,7 @@ export default {
       options: ["xs", "s", "m", "l", "xl", "xxl", "none"] as ISpaceSchema[],
     },
 
-    $minHeight: {
+    minHeight: {
       control: "text",
     },
   },
@@ -26,7 +26,7 @@ const StyledDiv = styled.div`
 const Template: StoryFn<VcenteredProps> = (args) => (
   <Vcentered {...args}>
     <StyledDiv>
-      div 1 - by default the component takes $minHeight=100vh - try to scroll
+      div 1 - by default the component takes minHeight=100vh - try to scroll
     </StyledDiv>
     <StyledDiv>div 2</StyledDiv>
     <StyledDiv>div 3</StyledDiv>
@@ -37,7 +37,7 @@ const Template: StoryFn<VcenteredProps> = (args) => (
 const Template1: StoryFn<VcenteredProps> = (args) => (
   <Vcentered {...args} top={<StyledDiv>Top Content</StyledDiv>}>
     <StyledDiv>
-      div 1 - by default the component takes $minHeight=100vh - try to scroll
+      div 1 - by default the component takes minHeight=100vh - try to scroll
     </StyledDiv>
     <StyledDiv>div 2</StyledDiv>
     <StyledDiv>div 3</StyledDiv>
@@ -48,7 +48,7 @@ const Template1: StoryFn<VcenteredProps> = (args) => (
 const Template2: StoryFn<VcenteredProps> = (args) => (
   <Vcentered {...args} bottom={<StyledDiv>Bottom Content</StyledDiv>}>
     <StyledDiv>
-      div 1 - by default the component takes $minHeight=100vh - try to scroll
+      div 1 - by default the component takes minHeight=100vh - try to scroll
     </StyledDiv>
     <StyledDiv>div 2</StyledDiv>
     <StyledDiv>div 3</StyledDiv>
@@ -63,7 +63,7 @@ const Template3: StoryFn<VcenteredProps> = (args) => (
     bottom={<StyledDiv>Bottom Content</StyledDiv>}
   >
     <StyledDiv>
-      div 1 - by default the component takes $minHeight=100vh - try to scroll
+      div 1 - by default the component takes minHeight=100vh - try to scroll
     </StyledDiv>
     <StyledDiv>div 2</StyledDiv>
     <StyledDiv>div 3</StyledDiv>
@@ -80,7 +80,7 @@ const Template4: StoryFn<VcenteredProps> = (args) => (
       style={{ textAlign: "left" }}
     >
       <StyledDiv>
-        div 1 - by default the component takes $minHeight=100vh - try to scroll
+        div 1 - by default the component takes minHeight=100vh - try to scroll
       </StyledDiv>
       <StyledDiv>div 2</StyledDiv>
       <StyledDiv>div 3</StyledDiv>
@@ -91,30 +91,30 @@ const Template4: StoryFn<VcenteredProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  $minHeight: "100vh",
+  minHeight: "100vh",
   gap: "xs",
 };
 
 export const WithTop = Template1.bind({});
 WithTop.args = {
-  $minHeight: "100vh",
+  minHeight: "100vh",
   gap: "none",
 };
 
 export const WithBottom = Template2.bind({});
 WithBottom.args = {
-  $minHeight: "100vh",
+  minHeight: "100vh",
   gap: "none",
 };
 
 export const WithTopAndBottom = Template3.bind({});
 WithTopAndBottom.args = {
-  $minHeight: "100vh",
+  minHeight: "100vh",
   gap: "none",
 };
 
 export const WithWrapperAndTopAndBottom = Template4.bind({});
 WithWrapperAndTopAndBottom.args = {
-  $minHeight: "100%",
+  minHeight: "100%",
   gap: "none",
 };

@@ -12,7 +12,7 @@ const StyledDiv = styled.div`
   border: 1px solid black;
 `;
 
-const Template: StoryFn<{ $span?: number }> = (args) => (
+const Template: StoryFn<{ span?: number }> = (args) => (
   <StyledDiv>
     <Pad {...args}>
       <StyledDiv>div</StyledDiv>
