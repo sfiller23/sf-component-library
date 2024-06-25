@@ -12,6 +12,8 @@ export interface CardProps {
   imgWidth?: string;
   bottomButtonEffect?: boolean;
   width?: string;
+  borderColor?: string;
+  borderWidth?: string;
   onClick?: () => void;
 }
 
@@ -19,6 +21,8 @@ const StyledCard = styled.div<CardProps>`
   background-color: ${({ background = "blue" }) => background};
   border-radius: ${({ radius = "10px" }) => radius};
   width: ${({ width = "100%" }) => width};
+  border-color: ${({ borderColor = "lightgrey" }) => borderColor};
+  border-width: ${({ borderWidth = "1px" }) => borderWidth};
 
   img {
     width: ${({ imgWidth = "30%" }) => imgWidth};
