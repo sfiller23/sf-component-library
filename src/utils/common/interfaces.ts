@@ -14,14 +14,10 @@ export interface InputErrorProps {
   color?: string;
 }
 
-type OneSpaceValue = ISpaceSchema;
-
-type TwoSpaceValue = `${OneSpaceValue} ${OneSpaceValue}`;
-
-type ThreeSpaceValue = `${TwoSpaceValue} ${OneSpaceValue}`;
-
-type FourSpaceValue = `${ThreeSpaceValue} ${OneSpaceValue}`;
-
 export interface PaddingMarginProps {
-  space?: FourSpaceValue;
+  space:
+    | `${ISpaceSchema | undefined}`
+    | `${ISpaceSchema | undefined} ${ISpaceSchema | undefined}`
+    | `${ISpaceSchema | undefined} ${ISpaceSchema | undefined} ${ISpaceSchema | undefined}`
+    | `${ISpaceSchema | undefined} ${ISpaceSchema | undefined} ${ISpaceSchema | undefined} ${ISpaceSchema | undefined}`;
 }
