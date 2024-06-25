@@ -2,7 +2,8 @@ import { styled } from "styled-components";
 import { ISpaceSchema, spaceSchema } from "../../themes/theme";
 import { PaddingMarginProps } from "../../utils/common";
 
-const Pad = styled.div<PaddingMarginProps & { width: string }>`
+const Pad = styled.div<PaddingMarginProps & { width?: string }>`
+  width: ${({ width = "auto" }) => width};
   padding: ${({ space = "xs" }) => {
     return String(space)
       .split(" ")

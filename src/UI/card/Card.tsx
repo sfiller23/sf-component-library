@@ -12,6 +12,7 @@ export interface CardProps {
   imgWidth?: string;
   bottomButtonEffect?: boolean;
   width?: string;
+  onClick?: () => void;
 }
 
 const StyledCard = styled.div<CardProps>`

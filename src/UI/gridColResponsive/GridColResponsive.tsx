@@ -12,10 +12,7 @@ const GridColResponsive = styled.div<GridColResponsiveProps>`
 
   grid-template-columns: repeat(
     auto-fit,
-    minmax(
-      min(${({ minItemWidth = "mim-content" }) => minItemWidth}, 100%),
-      1fr
-    )
+    minmax(min(${({ minItemWidth = "20rem" }) => minItemWidth}, 100%), 1fr)
   );
 `;
 
