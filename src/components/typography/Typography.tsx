@@ -1,8 +1,10 @@
-export interface TypographyProps {
-  children: string;
-}
+// export interface TypographyProps {
+//   children: string;
+// }
 
-const Typography = (props: TypographyProps) => {
+import { PropsWithChildren } from "react";
+
+const Typography = (props: PropsWithChildren) => {
   const { children } = props;
   return <p>{children}</p>;
 };
