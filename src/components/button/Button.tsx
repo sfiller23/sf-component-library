@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { justifyAlignMap, justifyAlignMapObj } from "../../utils/common";
 
 export interface ButtonProps {
-  //text: string; normalize typography and buttons at the end of the project
   background?: string;
   radius?: string;
   color?: string;

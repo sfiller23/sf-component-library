@@ -4,7 +4,7 @@ import ExampleImg from "../../../assets/images/example.jpeg";
 import Inline from "../../inline/Inline";
 import Pad from "../../pad/Pad";
 import Rows from "../../rows/Rows";
-import Card from "../Card";
+import Card, { ICardProps } from "../Card";
 
 export default {
   title: "Card",
@@ -12,51 +12,56 @@ export default {
   argTypes: {
     background: { control: "text" },
     radius: { control: "text" },
-    imgWidth: { control: "text" },
+    imageWidth: { control: "text" },
     bottomButtonEffect: { control: "boolean" },
     width: { control: "text" },
   },
 } as Meta;
 
-const Template: StoryFn<{ span?: number }> = (args) => (
-  <Card {...args}>
-    <Pad space="l">
-      <Inline align="center" justify="start" gap="l">
-        <img src={ExampleImg} alt="house" />
-        <Rows align="start" justify="evenSpace" gap="l">
-          <p style={{ fontSize: "2rem", margin: "0px" }}>You need a house</p>
-          <p style={{ fontSize: "1rem", margin: "0px" }}>
-            Tell us your needs, we will give you thousands of
-            <br /> suggestions for the dream home.
-          </p>
-        </Rows>
-      </Inline>
-    </Pad>
-    <button style={{ height: "2rem" }}>Click Me</button>
-  </Card>
-);
+const Template: StoryFn<ICardProps> = (args) => {
+  const { imageWidth, ...otherProps } = args;
+  return (
+    <Card {...otherProps}>
+      <Pad space="l">
+        <Inline align="center" justify="start" gap="l">
+          <img src={ExampleImg} alt="house" width={imageWidth} />
+          <Rows align="start" justify="evenSpace" gap="l">
+            <p style={{ fontSize: "2rem", margin: "0px" }}>You need a house</p>
+            <p style={{ fontSize: "1rem", margin: "0px" }}>
+              Tell us your needs, we will give you thousands of
+              <br /> suggestions for the dream home.
+            </p>
+          </Rows>
+        </Inline>
+      </Pad>
+      <button>Click Me</button>
+    </Card>
+  );
+};
 
-const Template2: StoryFn<{ span?: number }> = (args) => (
-  <Card {...args}>
-    <Pad space="l">
-      <Inline align="center" justify="start" gap="l">
-        <img src={ExampleImg} alt="house" />
-        <Rows align="start" justify="evenSpace" gap="l">
-          <p style={{ fontSize: "2rem", margin: "0px" }}>You need a house</p>
-          <p style={{ fontSize: "1rem", margin: "0px" }}>
-            Tell us your needs, we will give you thousands of
-            <br /> suggestions for the dream home.
-          </p>
-        </Rows>
-      </Inline>
-    </Pad>
-    <button style={{ height: "2rem" }}>Position the button as you wish</button>
-  </Card>
-);
-
+const Template2: StoryFn<ICardProps> = (args) => {
+  const { imageWidth, ...otherProps } = args;
+  return (
+    <Card {...otherProps}>
+      <Pad space="l">
+        <Inline align="center" justify="start" gap="l">
+          <img src={ExampleImg} alt="house" width={imageWidth} />
+          <Rows align="start" justify="evenSpace" gap="l">
+            <p style={{ fontSize: "2rem", margin: "0px" }}>You need a house</p>
+            <p style={{ fontSize: "1rem", margin: "0px" }}>
+              Tell us your needs, we will give you thousands of
+              <br /> suggestions for the dream home.
+            </p>
+          </Rows>
+        </Inline>
+      </Pad>
+      <button>Position The button as you wish</button>
+    </Card>
+  );
+};
 export const Default = Template.bind({});
 Default.args = {
-  imgWidth: "30%",
+  imageWidth: "30%",
   width: "100%",
   background: "blue",
   bottomButtonEffect: true,
@@ -64,7 +69,7 @@ Default.args = {
 
 export const MoreNiceLooking = Template.bind({});
 MoreNiceLooking.args = {
-  imgWidth: "30%",
+  imageWidth: "30%",
   width: "60%",
   background: "#98b7c1",
   bottomButtonEffect: true,
@@ -72,7 +77,7 @@ MoreNiceLooking.args = {
 
 export const NoHalfButtonOutEffect = Template2.bind({});
 NoHalfButtonOutEffect.args = {
-  imgWidth: "30%",
+  imageWidth: "30%",
   width: "60%",
   background: "#98b7c1",
   bottomButtonEffect: false,
