@@ -13,7 +13,6 @@ module.exports = {
     "@typescript-eslint",
     "react",
     "react-hooks",
-    "jsx-a11y",
     "import",
     "prettier",
   ],
