@@ -1,7 +1,7 @@
 {
   "name": "@sfiller23/sf-component-library",
-  "version": "1.5.59",
-  "description": "",
+  "version": "1.5.60",
+  "description": "demo-component-library",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -21,7 +21,7 @@
     "prepare": "npm run build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Shimon Filler",
   "license": "ISC",
   "repository": {
     "type": "git",
