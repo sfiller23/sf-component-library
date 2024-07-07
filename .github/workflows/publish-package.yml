@@ -25,6 +25,10 @@ jobs:
           git add -A
           git commit -m "Commit changes before versioning" || echo "No changes to commit"
       - run: npm version patch
+      - name: Publish to npmjs.com
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
       - name: Configure npm for npmjs.com
         run: |
           npm config set registry https://registry.npmjs.org/
