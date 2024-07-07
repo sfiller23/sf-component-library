@@ -10,7 +10,7 @@ import {
 import { styled } from "styled-components";
 
 export interface ICardProps {
-  backgroundColor?: string;
+  background?: string;
   radius?: string;
   imageWidth?: string;
   bottomButtonEffect?: boolean;
@@ -21,7 +21,7 @@ export interface ICardProps {
 }
 
 const StyledCard = styled.div<ICardProps>`
-  background-color: ${({ backgroundColor = "blue" }) => backgroundColor};
+  background-color: ${({ background = "blue" }) => background};
   border-radius: ${({ radius = "10px" }) => radius};
   width: ${({ width = "100%" }) => width};
   border-color: ${({ borderColor = "lightgrey" }) => borderColor};

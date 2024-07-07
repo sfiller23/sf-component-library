@@ -10,15 +10,14 @@ export interface ButtonProps {
 }
 
 const Button = styled.button<ButtonProps>`
+  background-color: ${({ background = "blue" }) => background};
   display: flex;
   align-items: center;
   justify-content: ${({ justify = "evenSpace" }) =>
     justifyAlignMapObj[justify]};
   gap: ${({ gap = "10px" }) => gap};
-  background-color: ${({ background = "blue" }) => background};
   border-radius: ${({ radius = "10px" }) => radius};
   color: ${({ color = "white" }) => color};
-
   img {
     width: auto !important;
   }

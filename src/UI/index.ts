@@ -10,3 +10,4 @@ export * from "./pad";
 export * from "./rows";
 export * from "./split";
 export * from "./verticalCentered";
+export * from "./verticalCentered";
