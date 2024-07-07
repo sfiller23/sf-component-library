@@ -1,5 +1,5 @@
 {
-  "name": "@cman430/sf-component-library",
+  "name": "@sfiller23/sf-component-library",
   "version": "1.5.49",
   "description": "",
   "type": "module",
@@ -38,6 +38,7 @@
     "@testing-library/react": "^15.0.4",
     "@types/chroma-js": "^2.4.4",
     "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
     "eslint": "^8.57.0",
@@ -53,17 +54,16 @@
     "typescript": "^5.4.5",
     "vite": "^5.2.10",
     "vite-plugin-dts": "^3.9.0",
-    "vitest": "^1.5.1",
-    "@types/react-dom": "^18.2.22"
+    "vitest": "^1.5.1"
   },
   "peerDependencies": {
     "@types/chroma-js": "^2.4.4",
     "chroma-js": "^2.4.2",
     "react": "^18.2.0",
     "react-icons": "^5.2.1",
+    "react-router-dom": "^6.23.1",
     "react-select": "^5.8.0",
-    "styled-components": "^6.0.0",
-    "react-router-dom": "^6.23.1"
+    "styled-components": "^6.0.0"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -72,6 +72,7 @@
     ]
   },
   "dependencies": {
+    "eslint-plugin-react-refresh": "^0.4.7",
     "remark-gfm": "^4.0.0"
   }
 }
