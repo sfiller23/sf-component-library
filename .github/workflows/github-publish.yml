@@ -22,19 +22,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Update package version and Publish to GitHub Packages
-        run: |
-          npm version patch -m "chore(release): bump version to %s"
-          npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
       # Optional: Add and commit any additional changes
       - name: Add any uncommitted changes
         run: git add .
 
       - name: Commit any additional changes
         run: git commit -m "Include additional changes" || echo "No additional changes to commit."
+
+      - name: Update package version and Publish to GitHub Packages
+        run: |
+          npm version patch -m "chore(release): bump version to %s"
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       # Push the commit created by npm version and any additional changes
       - name: Push changes
