@@ -1,7 +1,7 @@
 {
   "name": "@sfiller23/sf-component-library",
-  "version": "1.5.60",
-  "description": "demo-component-library",
+  "version": "1.5.53",
+  "description": "",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -21,15 +21,8 @@
     "prepare": "npm run build"
   },
   "keywords": [],
-  "author": "Shimon Filler",
+  "author": "",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sfiller23/sf-component-library.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.0",
     "@storybook/addon-essentials": "^8.1.5",
@@ -81,6 +74,7 @@
   },
   "dependencies": {
     "eslint-plugin-react-refresh": "^0.4.7",
-    "remark-gfm": "^4.0.0"
+    "remark-gfm": "^4.0.0",
+    "storybook": "^8.2.2"
   }
 }
