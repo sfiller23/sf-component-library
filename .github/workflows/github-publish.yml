@@ -1,0 +1,37 @@
+name: Publish Package
+
+on:
+  push:
+    branches:
+      - main # or any other branch you want to trigger the publish from
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20" # Specify the Node.js version
+          registry-url: "https://npm.pkg.github.com" # Setup registry URL for GitHub Packages
+          scope: "@sfiller23" # Replace with your GitHub username or organization
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Update package version and Publish to GitHub Packages
+        run: |
+          npm version patch -m "chore(release): bump version to %s"
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}} # GitHub automatically creates this secret to authenticate in your workflow
+
+      # Optional: Commit version bump changes to the repository
+      - name: Commit version bump
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git push
