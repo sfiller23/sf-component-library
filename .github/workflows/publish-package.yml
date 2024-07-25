@@ -22,8 +22,8 @@ jobs:
           node-version: "20"
           registry-url: "https://npm.pkg.github.com"
 
-      - name: Configure npm for GitHub Packages
-        run: npm config set //npm.pkg.github.com/:_authToken ${{ secrets.NPM_AUTH_TOKEN }}
+      # - name: Configure npm for GitHub Packages
+      #   run: npm config set //npm.pkg.github.com/:_authToken ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Install dependencies
         run: npm install
